@@ -15,6 +15,11 @@ class UserRepo:
         self.db.commit()
         return user
 
+    def update_username(self,user:User):
+        self.db.add(user)
+        self.db.commit()
+        return user
+
     def get_all_users(self):
         return self.db.query(User).all()
 
